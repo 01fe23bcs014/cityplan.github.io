@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Bike Management System Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Course Project Report: E-Bike Management System</h1>
+
+    <h2>Contents</h2>
+    <ul>
+        <li>1. <a href="#course-details">Course and Team Details</a></li>
+        <li>2. <a href="#introduction">Introduction</a></li>
+        <li>3. <a href="#problem-definition">Problem Definition</a></li>
+        <li>4. <a href="#functionality-selection">Functionality Selection</a></li>
+        <li>5. <a href="#functionality-analysis">Functionality Analysis</a></li>
+        <li>6. <a href="#conclusion">Conclusion</a></li>
+        <li>7. <a href="#references">References</a></li>
+    </ul>
+
+    <h2 id="course-details">1. Course and Team Details</h2>
+    <h3>1.1 Course Details</h3>
+    <table>
+        <tr><th>Course Name</th><td>Data Structures and Algorithms</td></tr>
+        <tr><th>Course Code</th><td>24ECSc205</td></tr>
+        <tr><th>Semester</th><td>III</td></tr>
+        <tr><th>Division</th><td>A</td></tr>
+        <tr><th>Year</th><td>2023-24</td></tr>
+        <tr><th>Instructor</th><td>Mr. Mallikarjun Akki</td></tr>
+    </table>
+
+    <h3>1.2 Team Details</h3>
+    <table>
+        <tr><th>Si. No.</th><th>Roll No.</th><th>Name</th></tr>
+        <tr><td>1</td><td>103</td><td>Nithish Palankar</td></tr>
+        <tr><td>2</td><td>135</td><td>Rehan Balur</td></tr>
+        <tr><td>3</td><td>143</td><td>Anvay Nayak</td></tr>
+    </table>
+
+    <h3>1.3 Report Owner</h3>
+    <table>
+        <tr><th>Roll No.</th><td>103</td></tr>
+        <tr><th>Name</th><td>Nithish Palankar</td></tr>
+    </table>
+
+    <h2 id="introduction">2. Introduction</h2>
+    <p>The E-Bike Management System is a software solution designed to enhance the experience of e-bike rental services. With urban areas facing challenges like traffic congestion and pollution, e-bikes provide a sustainable mode of transportation. The project leverages core concepts of data structures and algorithms to ensure efficient and scalable management of rental services.</p>
+    <p>The selected functionalities include station management and invoice generation. These features automate the addition and removal of docking stations and track user transactions, respectively. The choice of modules aligns with the need for seamless operations in the e-bike rental domain, ensuring user satisfaction and operational efficiency. The implementation was inspired by case studies and white papers discussing sustainable mobility solutions.</p>
+
+    <h2 id="problem-definition">3. Problem Definition</h2>
+    <h3>3.1 Domain</h3>
+    <p>Urban mobility faces challenges such as increased carbon emissions, traffic congestion, and inefficient public transportation systems. The e-bike rental service aims to address these issues by offering an eco-friendly and cost-effective alternative. However, managing docking stations and user transactions manually is time-consuming and prone to errors. Automating these processes improves efficiency and scalability while ensuring a better user experience.</p>
+
+    <h3>3.2 Module Description</h3>
+    <ul>
+        <li><strong>Station Management:</strong> Allows the addition and removal of docking stations, ensuring scalability as the service expands. It maintains a database of docking station locations and their capacities.</li>
+        <li><strong>Invoice Generation:</strong> Tracks user transactions, calculates rental costs based on usage time, and saves invoices as files. It ensures accurate billing and provides users with a transparent breakdown of charges.</li>
+    </ul>
+
+    <h2 id="functionality-selection">4. Functionality Selection</h2>
+    <table>
+        <tr>
+            <th>Si. No.</th>
+            <th>Functionality Name</th>
+            <th>Known</th>
+            <th>Unknown</th>
+            <th>Principles Applicable</th>
+            <th>Algorithms</th>
+            <th>Data Structures</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Station Management</td>
+            <td>Locations, capacities, basic CRUD operations</td>
+            <td>Scalability challenges, edge cases</td>
+            <td>CRUD principles, OOP</td>
+            <td>AVL Tree for location sorting</td>
+            <td>HashMap for quick lookups</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Invoice Generation</td>
+            <td>Time tracking, pricing rules</td>
+            <td>Handling concurrent user transactions</td>
+            <td>File handling, modular design</td>
+            <td>Greedy algorithm for cost calculation</td>
+            <td>Queue for transaction logs</td>
+        </tr>
+    </table>
+
+    <h2 id="functionality-analysis">5. Functionality Analysis</h2>
+    <h3>Station Management</h3>
+    <p><strong>Workflow:</strong></p>
+    <ul>
+        <li><strong>Input:</strong> Docking station location, capacity details.</li>
+        <li><strong>Process:</strong> Use an AVL tree to organize stations by location for efficient search and retrieval. HashMap stores capacities and ensures quick updates.</li>
+        <li><strong>Output:</strong> Updated list of stations with their details.</li>
+    </ul>
+    <p><strong>Efficiency Analysis:</strong></p>
+    <ul>
+        <li>Time Complexity: Addition: O(log n), Deletion: O(log n).</li>
+        <li>Space Complexity: O(n), where n is the number of stations.</li>
+    </ul>
+
+    <h3>Invoice Generation</h3>
+    <p><strong>Workflow:</strong></p>
+    <ul>
+        <li><strong>Input:</strong> Start and end times of rental, user details.</li>
+        <li><strong>Process:</strong> Calculate duration, apply pricing rules using a greedy algorithm, and store invoice as a file.</li>
+        <li><strong>Output:</strong> Invoice file saved with a breakdown of charges.</li>
+    </ul>
+    <p><strong>Efficiency Analysis:</strong></p>
+    <ul>
+        <li>Time Complexity: Transaction Logging: O(1), Invoice Calculation: O(n).</li>
+        <li>Space Complexity: O(m), where m is the number of active transactions.</li>
+    </ul>
+
+    <h2 id="conclusion">6. Conclusion</h2>
+    <p>The E-Bike Management System demonstrates the application of data structures and algorithms in solving real-world problems. Station management ensures efficient resource allocation, while invoice generation streamlines financial processes. This project emphasized the importance of modular design and efficiency analysis, providing valuable learning experiences in algorithm optimization and data structure selection.</p>
+
+    <h2 id="references">7. References</h2>
+    <ol>
+        <li>Thomas H. Cormen, Clifford Stein, Ronald L. Rivest, and Charles E. Leiserson. 2001. <em>Introduction to Algorithms (2nd ed.)</em>. McGraw-Hill Higher Education.</li>
+        <li>lbackstrom. <em>The Importance of Algorithms.</em> <a href="https://www.topcoder.com/community/data-science/data-science-tutorials/the-importance-of-algorithms/" target="_blank">Link</a>. Site last accessed on: 23 October 2017.</li>
+    </ol>
+</body>
+</html>
